@@ -229,4 +229,4 @@ while True:
     else:
         d_pressed = False
         
-    update(targetFPS) #update from the keyboard api
+    update(targetFPS) #update from the graphics api
