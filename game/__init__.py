@@ -3,7 +3,7 @@ import time
 import keyboard
 import random
 
-scale = 16
+scale = 32
 targetFPS = 30
 playingFieldOffset = 0 #128
 
@@ -11,7 +11,7 @@ speed = 19 #0-indexed #speed of 20 (19) seems good
 speedMultiplier = 0.9 #delay multiplied by this every time a line is collected
 
 tilesHor = 10
-tilesVer = 30
+tilesVer = 25
 
 pieceStartingX = int((tilesHor-1)/2)
 pieceStartingY = tilesVer - 5
@@ -141,7 +141,9 @@ class shape:
         ['blue',[0,0],[1,0],[0,1],[0,2]], #l right
         ['blue',[1,0],[0,0],[1,1],[1,2]], #l left
         ['yellow',[-1,0],[0,0],[1,0],[0,1]], #t
-        ['green',[0,0],[0,1],[0,2],[0,3]] #line
+        ['green',[0,0],[0,1],[0,2],[0,3]], #line
+        ['orange', [0,0],[0,1],[1,0],[1,-1]], #s
+        ['orange', [0,0],[0,-1],[1,0],[1,1]] #s-inv
         ]
     
     def __init__(self):
@@ -229,4 +231,4 @@ while True:
     else:
         d_pressed = False
         
-    update(targetFPS) #update from the graphics api
+    update(targetFPS) #update from the keyboard api
